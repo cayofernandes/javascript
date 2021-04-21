@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>salário</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            color: black;
+            font: normal 25pt arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt(`bom dia, qual seu nome? `)
+        var sal = parseInt(window.prompt(`digte seu salario`))
+        var salario = sal.toLocaleString('pt-BR' , {style: 'currency', currency: 'BRL'})
+        document.writeln(`olá, ${nome}, tudo bom?`)
+        document.write(`seu sálario é:${salario}`)  
+    </script>
+</body>
+</html>
