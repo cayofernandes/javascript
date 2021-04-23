@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somando numeros</title>
+    <style>
+        body{
+            font: normal 20pt arial;
+            background-color: rgb(112, 81, 141);
+
+        }
+        div#res{
+            margin-top: 40px;
+            margin-left: 40px;
+            font: normal 13pt arial;
+            background-color: rgb(158, 4, 172);
+            color: white;
+             width: 400px;/*largura do fundo*/  
+             height: 200px;/*altura do fundo*/
+            line-height: 150px;/*para ficar no meio(verticalmente) */
+            text-align: center;/*no centro horizontalmente*/
+        }
+        input{
+            background-color: rgb(172, 141, 197);
+        }
+        input#botao{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>somando valores.</h1>
+    <input type="number" name="txtn1" id='txtn1'> + <!--caixa para o usuario colocar o numero-->
+    <input type="number" name="txtn2" id='txtn2'>
+    <input id = 'botao' type="button" value="somar" onclick="somar()"> <!--botao para o usuario clicar. quando clicar vai chamar a function-->
+    <div id='res'>resultado aqui</div>
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')//me conectei com a caixa do input n com o valor do num 
+            var tn2 = window.document.getElementById('txtn2')
+            var n1 = Number(tn1.value)//como o valor estava vindo de uma caixa de texto estava string. o comando converteu em number.
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            var res = document.getElementById('res')
+            res.innerHTML = `a soma entre ${n1} e ${n2} é igual a: ${s}`
+
+
+        }
+    </script>
+
+</body>
+</html>
