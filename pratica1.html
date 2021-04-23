@@ -3,23 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>salário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>raiz quadrada</title>
     <style>
+        div#res{
+            background-color: rgb(0, 140, 255);
+            width: 300px;
+            height: 150px;
+            font: normal 19px arial;
+           margin-top: 15px;
+           margin-left: 5px;
+           text-align: center;
+           line-height: 7;
+        }
         body{
-            background-color: aquamarine;
-            color: black;
-            font: normal 25pt arial;
+            background-color: rgb(0, 0, 0);
+            font: normal 22pt arial;
+            color: white;
+        }
+        input{
+            background-color: rgb(0, 31, 209);
+            color: white;
+        }
+        input#botão{
+            background-color: rgb(0, 140, 255);
         }
     </style>
 </head>
 <body>
-    <script>
-        var nome = window.prompt(`bom dia, qual seu nome? `)
-        var sal = parseInt(window.prompt(`digte seu salario`))
-        var salario = sal.toLocaleString('pt-BR' , {style: 'currency', currency: 'BRL'})
-        document.writeln(`olá, ${nome}, tudo bom?`)
-        document.write(`seu sálario é:${salario}`)  
-    </script>
+   <p>digite o a:</p> <input type="number" name="txtn1" id="txtn1">
+   <p>digite o b:</p> <input type="number" name="txtn2" id="txtn2">
+   <p>digite o c:</p> <input type="number" name="txtn3" id="txtn3">
+   <input id="botão" type="button" value="raiz_quadrada" onclick="raiz_quadrada()">
+   <div id="res" >aqui esta o resultado:</div>
+   <script>
+       function raiz_quadrada() {
+       var txtn1 = window.document.getElementById("txtn1") 
+       var txtn2 = window.document.getElementById("txtn2")
+       var txtn3 = window.document.getElementById("txtn3")
+       var a = Number(txtn1.value)
+       var b = Number(txtn2.value)
+       var c = Number(txtn3.value)
+       var delta = (b**2) - (4*a*c)
+       var x1 = (-b + Math.sqrt(delta))/ (2*a)
+       var x2 = (-b - Math.sqrt(delta))/ (2*a)
+       var res = window.document.getElementById("res")
+       res.innerText = `as raizes são: ${x1} e ${x2} `
+       }
+   </script>
 </body>
 </html>
